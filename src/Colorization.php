@@ -21,7 +21,7 @@ class Colorization
      *
      * @var array
      */
-    private $foregroundColors = [
+    private static $foregroundColors = [
         'black'        => '0;30',
         'dark_gray'    => '1;30',
         'blue'         => '0;34',
