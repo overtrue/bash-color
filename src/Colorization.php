@@ -21,7 +21,7 @@ class Colorization
      *
      * @var array
      */
-    private $foregroundColors = [
+    private static $foregroundColors = [
         'black'        => '0;30',
         'dark_gray'    => '1;30',
         'blue'         => '0;34',
@@ -69,8 +69,11 @@ class Colorization
         $foreground = preg_replace_callback('/([A-Z])/', function($matches){
             return '_'.strtolower($matches[1]);
         }, $method);
-
         list($string, $background) = array_pad($args, 2, null);
+        //统一一下驼峰~
+        $background = preg_replace_callback('/([A-Z])/', function($matches){
+            return '_'.strtolower($matches[1]);
+        }, $background);
 
         if (!isset(self::$foregroundColors[$foreground])) {
             throw new Exception("Foreground '$foreground' not exists.");
