@@ -64,7 +64,7 @@ class Colorization
      *
      * @return string
      */
-    public function __callStatic($method, $args)
+    public static function __callStatic($method, $args)
     {
         $foreground = preg_replace_callback('/([A-Z])/', function($matches){
             return '_'.strtolower($matches[1]);
