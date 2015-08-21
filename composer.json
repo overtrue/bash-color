@@ -1,6 +1,7 @@
 {
     "name": "overtrue/bash-color",
     "description": "A tool for output styled bash text.",
+    "keywords":["bash", "prompt", "colorized", "console style"],
     "require": {
         "php": "5.4"
     },
