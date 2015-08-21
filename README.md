@@ -1,7 +1,13 @@
 # BashColor
-Generate command line colorized text.
+Generate command line colorized text. 给命令行文字添加前景/背景色、以及修饰效果。
 
-给命令行文字添加前景/背景色、以及修饰效果。
+[![Build Status](https://travis-ci.org/overtrue/bash-color.svg?branch=master)](https://travis-ci.org/overtrue/bash-color)
+[![Latest Stable Version](https://poser.pugx.org/overtrue/bash-color/v/stable.svg)](https://packagist.org/packages/overtrue/bash-color)
+[![Latest Unstable Version](https://poser.pugx.org/overtrue/bash-color/v/unstable.svg)](https://packagist.org/packages/overtrue/bash-color)
+[![Build Status](https://scrutinizer-ci.com/g/overtrue/bash-color/badges/build.png?b=master)](https://scrutinizer-ci.com/g/overtrue/bash-color/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/overtrue/bash-color/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/overtrue/bash-color/?branch=master)
+[![Total Downloads](https://poser.pugx.org/overtrue/bash-color/downloads)](https://packagist.org/packages/overtrue/bash-color)
+[![License](https://poser.pugx.org/overtrue/bash-color/license)](https://packagist.org/packages/overtrue/bash-color)
 
 # Installing
 
