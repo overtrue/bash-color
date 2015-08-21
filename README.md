@@ -21,10 +21,14 @@ $ composer require "overtrue/bash-color"
 use Overtrue\BashColor\BashColor;
 
 echo BashColor::render('<fg=green>Are you sure ?</><fg=yellow> [Y/n]:</>'), "\n";
-echo BashColor::render('<bg=yellow;>hello world!</>'), "\n";
+echo BashColor::render('<bg=purple;>hello world!</>'), "\n";
 echo BashColor::render('<fg=green;opt=bold>yes!</>'), "\n";
 echo BashColor::render('<fg=cyan;opt=bold;bg=red>ugly!</>'), "\n";
+
 ```
+result:
+
+![qq20150822-1 2x](https://cloud.githubusercontent.com/assets/1472352/9413936/9decd54a-4867-11e5-8d0b-1d27da954cc3.jpg)
 
 ### Attributes
 
