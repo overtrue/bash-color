@@ -108,7 +108,7 @@ class BashColor
                     return $matches['string'];
                 }
 
-                list($foreground, $background, $option, $endModifier) = self::parseAttributes($matches['attributes']);
+                list($foreground, $background, $option, $endModifier) = BashColor::parseAttributes($matches['attributes']);
 
                 return "\033[{$option};{$background};{$foreground}m{$matches['string']}\033[{$endModifier}m";
             }, $string);
