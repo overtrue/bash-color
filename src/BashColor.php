@@ -123,11 +123,11 @@ class BashColor
      */
     protected static function parseAttributes($attributesString)
     {
-        $attributes = [
+        $attributes = array(
             'fg' => 'default',
             'bg' => 'default',
             'opt' => 'none',
-        ];
+        );
 
         foreach (explode(';', $attributesString) as $attribute) {
             $temp = explode('=', $attribute);
