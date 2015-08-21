@@ -78,6 +78,7 @@ class BashColor
         'yellow' => 43,  // Yellow
         'blue' => 44,  // Blue
         'magenta' => 45,  // Magenta/Purple
+        'purple' => 45,  // Magenta/Purple
         'cyan' => 46,  // Cyan
         'light_gray' => 47,  // Light Gray (don't use with white foreground)
         'dark_gray' => 100, // Dark Gray (don't use with black foreground)
@@ -86,6 +87,7 @@ class BashColor
         'light_yellow' => 103, // Light Yellow (don't use with white foreground)
         'light_blue' => 104, // Light Blue (don't use with light yellow foreground)
         'light_magenta' => 105, // Light Magenta/Pink (don't use with light foreground)
+        'light_pink' => 105, // Light Magenta/Pink (don't use with light foreground)
         'light_cyan' => 106, // Light Cyan (don't use with white foreground)
         'white' => 107, // White (don't use with light foreground)
     );
@@ -104,10 +106,6 @@ class BashColor
     {
         return preg_replace_callback('~<(?<attributes>[a-z_;A-Z=\s]+)>(?<string>.*?)</>~',
             function ($matches) {
-                if (empty($matches['attributes'])) {
-                    return $matches['string'];
-                }
-
                 list($foreground, $background, $option, $endModifier) = BashColor::parseAttributes($matches['attributes']);
 
                 return "\033[{$option};{$background};{$foreground}m{$matches['string']}\033[{$endModifier}m";
