@@ -1,7 +1,5 @@
 <?php
 
-namespace Overtrue\BashColor;
-
 /**
  * BashColor.php.
  *
@@ -15,6 +13,8 @@ namespace Overtrue\BashColor;
  * @link      http://overtrue.me
  * @link      https://github.com/overtrue/colorization
  */
+
+namespace Overtrue\BashColor;
 
 /**
  * Class BashColor.
