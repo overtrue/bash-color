@@ -69,8 +69,11 @@ class Colorization
         $foreground = preg_replace_callback('/([A-Z])/', function($matches){
             return '_'.strtolower($matches[1]);
         }, $method);
-
         list($string, $background) = array_pad($args, 2, null);
+        //统一一下驼峰~
+        $background = preg_replace_callback('/([A-Z])/', function($matches){
+            return '_'.strtolower($matches[1]);
+        }, $background);
 
         if (!isset(self::$foregroundColors[$foreground])) {
             throw new Exception("Foreground '$foreground' not exists.");
