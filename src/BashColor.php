@@ -26,7 +26,7 @@ class BashColor
      *
      * @var array
      */
-    private static $options = [
+    private static $options = array(
         'none' => 0, // reset/remove all option
         'bold' => 1, // bold/bright
         'bright' => 1, // bold/bright
@@ -36,14 +36,14 @@ class BashColor
         'reverse' => 7, // reverse/invert
         'invert' => 7, // reverse/invert
         'hidden' => 8, // hidden
-    ];
+    );
 
     /**
      * Foreground colors.
      *
      * @var array
      */
-    private static $foregroundColors = [
+    private static $foregroundColors = array(
         'default' => 39, // default (usually green, white or light gray)
         'black' => 30, // black
         'red' => 31, // red (don't use with green background)
@@ -63,14 +63,14 @@ class BashColor
         'light_pink' => 95, // light magenta/pink
         'light_cyan' => 96, // light cyan
         'white' => 97, // white
-    ];
+    );
 
     /**
      * Backgound colors.
      *
      * @var array
      */
-    private static $backgroundColors = [
+    private static $backgroundColors = array(
         'default' => 49,  // Default background color (usually black or blue)
         'black' => 40,  // Black
         'red' => 41,  // Red
@@ -88,7 +88,7 @@ class BashColor
         'light_magenta' => 105, // Light Magenta/Pink (don't use with light foreground)
         'light_cyan' => 106, // Light Cyan (don't use with white foreground)
         'white' => 107, // White (don't use with light foreground)
-    ];
+    );
 
     /**
      * Return colorized string.
@@ -136,7 +136,7 @@ class BashColor
                 continue;
             }
 
-            $attributes[$temp[0]] = self::snakeCase($temp[1]);
+            $attributes[trim($temp[0])] = self::snakeCase(trim($temp[1]));
         }
 
         !empty(self::$foregroundColors[$attributes['fg']]) || $attributes['fg'] = 'default';
@@ -148,7 +148,7 @@ class BashColor
         $option = self::$options[$attributes['opt']];
         $endModifier = $option ? 20 + $option : $option;
 
-        return [$foreground, $background, $option, $endModifier];
+        return array($foreground, $background, $option, $endModifier);
     }
 
     /**

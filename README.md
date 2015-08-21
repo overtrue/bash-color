@@ -3,6 +3,12 @@ Generate command line colorized text.
 
 给命令行文字添加前景/背景色、以及修饰效果。
 
+# Installing
+
+```shell
+$ composer require "overtrue/bash-color"
+```
+
 # Usage
 
 ```php
