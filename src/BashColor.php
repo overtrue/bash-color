@@ -96,9 +96,6 @@ class BashColor
      * Return colorized string.
      *
      * @param string $string
-     * @param string $foreground
-     * @param string $background
-     * @param int    $option
      *
      * @return string
      */
