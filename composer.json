@@ -1,0 +1,19 @@
+{
+    "name": "overtrue/bash-color",
+    "description": "A tool for output styled bash text.",
+    "require": {
+        "php": "5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Overtrue\\BashColor\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "overtrue",
+            "email": "anzhengchao@gmail.com"
+        }
+    ]
+}
