@@ -16,9 +16,9 @@ echo BashColor::render('<fg=cyan;opt=bold;bg=red>ugly!</>'), "\n";
 
 ### Attributes
 
-- fg foreground color.
-- bg background color.
-- opt option.
+- `fg` foreground color.
+- `bg` background color.
+- `opt` option.
 
 ### foreground
 
