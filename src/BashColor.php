@@ -102,19 +102,13 @@ class BashColor
      */
     public static function render($string)
     {
-        // for PHP 5.3
-        function parseAttributes($attributesString)
-        {
-            return self::parseAttributes($attributesString);
-        }
-
         return preg_replace_callback('~<(?<attributes>[a-z_;A-Z=\s]+)>(?<string>.*?)</>~',
             function ($matches) {
                 if (empty($matches['attributes'])) {
                     return $matches['string'];
                 }
 
-                list($foreground, $background, $option, $endModifier) = parseAttributes($matches['attributes']);
+                list($foreground, $background, $option, $endModifier) = BashColor::parseAttributes($matches['attributes']);
 
                 return "\033[{$option};{$background};{$foreground}m{$matches['string']}\033[{$endModifier}m";
             }, $string);
@@ -127,7 +121,7 @@ class BashColor
      *
      * @return array
      */
-    protected static function parseAttributes($attributesString)
+    public static function parseAttributes($attributesString)
     {
         $attributes = array(
             'fg' => 'default',
