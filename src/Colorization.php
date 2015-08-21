@@ -21,7 +21,7 @@ class Colorization
      *
      * @var array
      */
-    private $foregroundColors = [
+    private static $foregroundColors = [
         'black'        => '0;30',
         'dark_gray'    => '1;30',
         'blue'         => '0;34',
@@ -64,7 +64,7 @@ class Colorization
      *
      * @return string
      */
-    public function __callStatic($method, $args)
+    public static function __callStatic($method, $args)
     {
         $foreground = preg_replace_callback('/([A-Z])/', function($matches){
             return '_'.strtolower($matches[1]);
@@ -94,19 +94,19 @@ class Colorization
         $background = null
         )
     {
-        $output = '';
 
         if (func_num_args() == 1) {
             return $string;
         }
 
-        $foreground && $output .= "\033[".self::$foregroundColors[$foreground].'m';
+        $background = !empty(self::$backgroundColors[$background]) ? self::$backgroundColors[$background] . ';' : ';';
+        $foreground = !empty(self::$foregroundColors[$foreground]) ? self::$foregroundColors[$foreground].'m' : '';
 
-        $background && $output .= "\033[".self::$backgroundColors[$background].'m';
+        $attr = 0;
 
-        $output .=  $string."\033[0m";
+        return "\033[${attr};${background};${foreground}{$string}\033[0m";
 
-        return $output;
+        return "\033[{$background}{$foreground}{$string}\033[0m";
     }
 
     /**
