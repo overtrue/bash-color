@@ -80,6 +80,10 @@ echo BashColor::render('<fg=cyan;opt=bold;bg=red>ugly!</>'), "\n";
 'hidden'     // Hidden
 ```
 
+# Reference
+
+[Bash tips: Colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
+
 # License
 
 MIT
